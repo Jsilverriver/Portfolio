@@ -108,6 +108,20 @@
         <hr />
         <h2>Lates Posts</h2>
         <br />
+        {% for blog in blogs.all %}
+        <a href=""><h3>{{ blog.title }}</h3></a>
+        {{ blog.pub_date_pretty }}
+        <br />
+        <img
+          class="img-fluid"
+          src="{{blog.image.url}}"
+          height="200"
+          width="200"
+        />
+        <br />
+        <p>{{ blog.summary }}</p>
+        <br />
+        {% endfor%}
         <hr />
       </div>
     </main>
